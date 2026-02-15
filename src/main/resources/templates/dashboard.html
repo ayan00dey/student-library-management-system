@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard - Student Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        .content {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Student Library Management System</h1>
+    <p>Welcome, <span th:text="${username}"></span></p>
+</header>
+
+<nav>
+    <a th:href="@{/authors}">Authors</a>
+    <a th:href="@{/books}">Books</a>
+    <a th:href="@{/cards}">Cards</a>
+    <a th:href="@{/students}">Students</a>
+    <a th:href="@{/transactions}">Transactions</a>
+    <a th:href="@{/logout}">Logout</a>
+</nav>
+
+<div class="content">
+    <h2>Dashboard</h2>
+    <p>Select an option above to manage library records.</p>
+</div>
+</body>
+</html>
