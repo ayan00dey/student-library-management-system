@@ -2,6 +2,9 @@ package com.student_library.example.student_library_management_system.security;
 
 import com.student_library.example.student_library_management_system.model.AppUser;
 import com.student_library.example.student_library_management_system.repository.AppUserRepository;
+
+import javax.swing.Spring;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,12 +14,19 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
+        
+       //We are implementing Spring Security's UserDetailsService interface.
+
+       //Spring Security uses this interface to load user details from the database during authentication.
+
+      //So this class acts as a bridge between Spring Security and the database.
 
     @Autowired
     private AppUserRepository appUserRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+
         AppUser appUser = appUserRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
         return User.withUsername(appUser.getUsername())

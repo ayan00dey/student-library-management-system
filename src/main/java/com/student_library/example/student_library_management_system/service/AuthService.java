@@ -20,7 +20,7 @@ public class AuthService {
 
     public void signup(SignupDto signupDto) {
     // Check if username and password are the same (case-insensitive)
-    if (signupDto.getUsername().equalsIgnoreCase(signupDto.getPassword())) {
+       if (signupDto.getUsername().equalsIgnoreCase(signupDto.getPassword())) {
         throw new RuntimeException("Username and password cannot be the same");
     }
 

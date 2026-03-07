@@ -24,7 +24,7 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
-    // ResponseEntity - takes the response from APIs and bins it to the reponse entity and sends it to the client
+    // ResponseEntity - takes the response from APIs and beans it to the reponse entity and sends it to the client
     // ResponseEntity - it is a generic class , it takes two parameters 1. response body 2. status code
     // ResponseEntity - it is a class that represents the entire HTTP response
     // 201 - created

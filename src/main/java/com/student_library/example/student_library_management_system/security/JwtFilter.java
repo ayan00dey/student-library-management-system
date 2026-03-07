@@ -2,6 +2,8 @@ package com.student_library.example.student_library_management_system.security;
 
 import java.io.IOException;
 
+import javax.swing.Spring;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +25,10 @@ public class JwtFilter extends OncePerRequestFilter {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    //This class is a JWT Authentication Filter used in Spring Security to check and validate the JWT token for every request.
+
+    //It runs before the request reaches the controller. 
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
@@ -47,3 +53,4 @@ protected boolean shouldNotFilter(HttpServletRequest request) throws ServletExce
     return path.startsWith("/auth/");
 }
 }
+
